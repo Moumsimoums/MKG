@@ -3,6 +3,7 @@
 Travailler sur un projet sur deux ordis différents :
 
 1 Initialiser un repo de code sur Ordi 1
+
 2 Dans git, lancer les instructions suivantes : git init, git add ., git commit -am "init"
 3 Pour faire en sorte que ce soit défini comme l'origine du projet : git remote add origin lien_git
 4 Pousser sur le git : git push -u origin --all

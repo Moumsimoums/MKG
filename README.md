@@ -20,7 +20,7 @@
 
 9 Vérifier que c'est bien passé
 
-**Pousser un changement :
+**Pousser un changement :**
 
 1 git pull origin master
 

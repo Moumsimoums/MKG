@@ -1,6 +1,6 @@
 # MKG
 
-Travailler sur un projet sur deux ordis différents :
+**Travailler sur un projet sur deux ordis différents :**
 
 1 Initialiser un repo de code sur Ordi 1
 
@@ -19,3 +19,14 @@ Travailler sur un projet sur deux ordis différents :
 8 Editer un fichier, puis : git commit -am "Update 2", git push origin master
 
 9 Vérifier que c'est bien passé
+
+**Pousser un changement :
+
+1 git pull origin master
+
+2 Faire le changement
+
+3 git commit -am "Mon changement"
+
+4 git push origin master
+

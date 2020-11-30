@@ -26,7 +26,9 @@
 
 2 Faire le changement
 
-3 git commit -am "Mon changement"
+3 git add . (seulement s'il y a des nouveaux fichiers)
 
-4 git push origin master
+4 git commit -am "Mon changement"
+
+5 git push origin master
 

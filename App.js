@@ -9,7 +9,9 @@ export default class App extends React.Component {
         <View style={{ flex: 1, backgroundColor: '#FFFFFF' }}></View>
         <View style={{ flex: 6, backgroundColor: '#3472FF' }}>
           <View style={{ flex: 2, backgroundColor: '#FFFFFF' }}></View>
-          <View style={{ flex: 1, backgroundColor: '#3472FF' }}></View>
+          <View style={{ flex: 1, backgroundColor: '#3472FF' }}>
+            <Select></Select>
+          </View>
           <View style={{ flex: 2, backgroundColor: '#FFFFFF' }}></View>
           <View style={{ flex: 1, backgroundColor: '#3472FF' }}></View>
           <View style={{ flex: 2, backgroundColor: '#FFFFFF' }}></View>

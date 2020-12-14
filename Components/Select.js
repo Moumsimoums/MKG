@@ -1,30 +1,31 @@
-import React from 'react'
-import { StyleSheet, View } from 'react-native'
-import { NativeSelect } from '@material-ui/core';
+import React, { useState } from "react";
+import { View, StyleSheet } from "react-native";
+import { Picker } from '@react-native-picker/picker';
+
+
 
 class Select extends React.Component {
+  state = {
+    language: 'java',
+  };
   render() {
     return (
-      <NativeSelect>
-        <option value="">None</option>
-        <option value="abc">ABC</option>
-      </NativeSelect>
+      <Picker
+        selectedValue={this.state.language}
+        style={styles.main_container}
+        onValueChange={(itemValue, itemIndex) =>
+          this.setState({ language: itemValue })
+        }>
+        <Picker.Item label="Java" value="java" />
+        <Picker.Item label="JavaScript" value="js" />
+      </Picker>
     )
   }
 }
 
 const styles = StyleSheet.create({
   main_container: {
-    marginTop: 20,
     flex: 1
-  },
-  textinput: {
-    marginLeft: 5,
-    marginRight: 5,
-    height: 50,
-    borderColor: '#000000',
-    borderWidth: 1,
-    paddingLeft: 5
   }
 })
 

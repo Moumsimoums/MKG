@@ -1,32 +1,59 @@
-import React, { useState } from "react";
-import { View, StyleSheet } from "react-native";
-import { Picker } from '@react-native-picker/picker';
-
+import * as React from 'react'
+import { View, StyleSheet } from 'react-native'
+import { CustomPicker } from 'react-native-custom-picker'
 
 
 class Select extends React.Component {
-  state = {
-    language: 'java',
-  };
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      value: null
+    }
+  }
+
+  handleOnChange(value) {
+    this.state.value = value
+    this.props.onChange(value)
+  }
+
   render() {
+    const params = this.props
     return (
-      <Picker
-        selectedValue={this.state.language}
-        style={styles.main_container}
-        onValueChange={(itemValue, itemIndex) =>
-          this.setState({ language: itemValue })
-        }>
-        <Picker.Item label="Java" value="java" />
-        <Picker.Item label="JavaScript" value="js" />
-      </Picker>
+      <View style={style.selectContainer}>
+        <CustomPicker
+          value={params.value}
+          options={params.options}
+          placeholder={params.placeholder}
+          modalAnimationType='fade'
+          onValueChange={value => {
+            this.handleOnChange(value)
+          }}
+        />
+      </View>
     )
   }
 }
 
-const styles = StyleSheet.create({
-  main_container: {
-    flex: 1
-  }
+const style = StyleSheet.create({
+  button: {
+    flex: 1,
+    borderRadius: 25,
+    backgroundColor: '#EE8700'
+  },
+
+  buttonLabel: {
+    color: '#FFFFFF',
+    fontWeight: 'bold'
+  },
+
+  selectContainer: {
+    flex: 1,
+    textAlign: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#EE8700',
+    borderRadius: 25
+  },
 })
 
 export default Select

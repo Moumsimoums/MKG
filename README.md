@@ -32,3 +32,21 @@
 
 5 git push origin master
 
+# Update :
+## KHOUKHOU
+
+git commit -a (le -a sert à add tous les fichiers modifiés donc il y a une redondance dans ton process)
+
+git commit -m "toto" suffit si tu as fait git add *normalement*, ou alors git commit -am et pas besoin de faire git add .
+
+## par contre..
+
+s'agirait de faire des branches si je fais des corrections ahah:
+
+git checkout -b MaNouvelleBranche
+
+ou git branch MaNouvelleBranche puis git checkout MaNouvelleBranche
+
+git push origin MaNouvelleBranche
+
+==> PullRequest sur github pour merge sur master

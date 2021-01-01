@@ -12,28 +12,30 @@ class Select extends React.Component {
     }
   }
 
-  handleOnChange(value) {
-    this.state.value = value
-    this.props.onChange(value)
-  }
-
   render() {
     const params = this.props
     return (
       <View style={style.selectContainer}>
         <CustomPicker
-          value={params.value}
-          options={params.options}
-          placeholder={params.placeholder}
-          modalAnimationType='fade'
-          onValueChange={value => {
-            this.handleOnChange(value)
-          }}
+            value={params.value}
+            options={params.options}
+            placeholder={params.placeholder}
+            modalAnimationType='fade'
+            onValueChange={value => {
+                this.handleOnChange(value)
+            }}
         />
       </View>
     )
   }
+
+  handleOnChange(value) {
+    this.state.value = value
+    this.props.onChange(value)
+  }
 }
+
+
 
 const style = StyleSheet.create({
   button: {

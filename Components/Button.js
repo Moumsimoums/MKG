@@ -11,7 +11,7 @@ class Button extends React.Component {
   render() {
     const params = this.props
     return (
-      <TouchableOpacity style={style.button} disabled={params.disabled}>
+      <TouchableOpacity style={style.button} disabled={params.disabled} onPress={() => {this.handleOnPress(params.scene, params.character)}}>
         <View style={style.buttonLabelContainer}>
           <Text style={style.buttonLabel}>
             {params.title}
@@ -20,7 +20,12 @@ class Button extends React.Component {
       </TouchableOpacity>
     )
   }
+
+  handleOnPress(scene, character) {
+    this.props.onPress(scene, character)
+  }
 }
+
 
 const style = StyleSheet.create({
   button: {

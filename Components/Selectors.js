@@ -35,7 +35,7 @@ class Selectors extends React.Component {
                 </View>
                 <View style={{ flex: 2, backgroundColor: '#3472FF' }}></View>
                 <View style={{ flex: 1, backgroundColor: '#3472FF' }}>
-                    <Button title="C'est parti" disabled={this.state.clickableButton}/>
+                    <Button title="C'est parti" disabled={this.state.clickableButton} scene={this.state.selectedScene} character={this.state.selectedCharacter} onPress={(scene, character) => {this.displayDetailForScene(scene, character)}}/>
                 </View>
                 <View style={{ flex: 5, backgroundColor: '#3472FF' }}></View>
             </View>
@@ -65,6 +65,10 @@ class Selectors extends React.Component {
             selectedCharacter: value,
             clickableButton: newClickableButton
         })
+    }
+
+    displayDetailForScene(scene, character) {
+        console.log(scene, character)
     }
 }
 

@@ -11,7 +11,10 @@ const SceneAndCharacterSelectionStackNavigator = createStackNavigator({
         }
     },
     SceneDetail: { 
-        screen: SceneDetail
+        screen: SceneDetail,
+        navigationOptions: {
+            title: 'Réciter ma scène comme un pro'
+        }
     }
 
 })

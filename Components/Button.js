@@ -11,7 +11,7 @@ class Button extends React.Component {
   render() {
     const params = this.props
     return (
-      <TouchableOpacity style={style.button} disabled={params.disabled} onPress={() => {this.handleOnPress(params.scene, params.character)}}>
+      <TouchableOpacity style={style.button} disabled={params.disabled} onPress={() => {this.handleOnPress(params)}}>
         <View style={style.buttonLabelContainer}>
           <Text style={style.buttonLabel}>
             {params.title}
@@ -21,8 +21,8 @@ class Button extends React.Component {
     )
   }
 
-  handleOnPress(scene, character) {
-    this.props.onPress(scene, character)
+  handleOnPress(params) {
+    this.props.onPress(params.scene, params.character)
   }
 }
 

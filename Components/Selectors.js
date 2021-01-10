@@ -2,23 +2,19 @@ import { View } from 'react-native'
 import React from 'react'
 import Select from './Select'
 import Button from './Button'
-import textData from '../Helpers/textData'
+import textDict from '../Helpers/textDict'
 
 
 class Selectors extends React.Component {
 
     constructor(props) {
         super(props)
-        let scenes = []
-        textData.forEach(scene => {
-            scenes.push(scene.id)
-        });
         this.state = {
-          scenes: scenes,
-          characters: [],
-          clickableButton: true,
-          selectedScene: null,
-          selectedCharacter: null
+            scenes: Object.keys(textDict),
+            characters: [],
+            clickableButton: true,
+            selectedScene: null,
+            selectedCharacter: null
         }
     }
 
@@ -43,17 +39,9 @@ class Selectors extends React.Component {
     }
 
     onSceneChange(value) {
-        let newScene = null
-        let newCharacters = []
-        textData.forEach(scene => {
-            if (scene.id == value) {
-                newScene = value
-                newCharacters = scene.characters
-            }
-        });
         this.setState({
-            selectedScene: newScene,
-            characters: newCharacters,
+            selectedScene: value,
+            characters: textDict[value]["characters"],
             selectedCharacter: null,
             clickableButton: true
         })
@@ -68,7 +56,7 @@ class Selectors extends React.Component {
     }
 
     displayDetailForScene(scene, character) {
-        console.log(scene, character)
+        this.props.onPress(scene, character)
     }
 }
 

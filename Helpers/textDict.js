@@ -1,6 +1,5 @@
-export default textData = [
-    {
-        id: 5,
+export default textDict = {
+    5: {
         characters: ["Le Notaire", "Martin"],
         scene: [
             {
@@ -17,12 +16,15 @@ export default textData = [
             },
             {
                 character: "Martin",
+                dialogue: "Ok, vous avez les clés, ou pas ? J'aimerais rentrer"
+            },
+            {
+                character: "Le Notaire",
                 dialogue: "Euh... oui, j'ai les clés, mais elles sont chez moi, j'habite juste en face là, c'est pour ça, je vous ai vu par la fenêtre. On va pas rester sous cette pluie hein ? Venez, venez, ma femme a dû nous préparer quelque chose... une petite boisson chaude..."
             }
         ]
     },
-    {
-        id: 6,
+    6: {
         characters: ["La femme du Notaire", "Le Notaire", "Martin"],
         scene: [
             {
@@ -131,4 +133,4 @@ export default textData = [
             }
         ]
     }
-]
+}

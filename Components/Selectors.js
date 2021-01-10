@@ -14,7 +14,8 @@ class Selectors extends React.Component {
             characters: [],
             clickableButton: true,
             selectedScene: null,
-            selectedCharacter: null
+            selectedCharacter: null,
+            optionTextDisplay: "Masquer mes répliques"
         }
     }
 
@@ -31,9 +32,13 @@ class Selectors extends React.Component {
                 </View>
                 <View style={{ flex: 2, backgroundColor: '#3472FF' }}></View>
                 <View style={{ flex: 1, backgroundColor: '#3472FF' }}>
-                    <Button title="C'est parti" disabled={this.state.clickableButton} scene={this.state.selectedScene} character={this.state.selectedCharacter} onPress={(scene, character) => {this.displayDetailForScene(scene, character)}}/>
+                    <Select value={this.state.optionTextDisplay} options={["Masquer mes répliques", "Afficher mes répliques"]} onChange={value => {this.onOptionChange(value)}} />
                 </View>
-                <View style={{ flex: 5, backgroundColor: '#3472FF' }}></View>
+                <View style={{ flex: 2, backgroundColor: '#3472FF' }}></View>
+                <View style={{ flex: 1, backgroundColor: '#3472FF' }}>
+                    <Button title="C'est parti" disabled={this.state.clickableButton} scene={this.state.selectedScene} character={this.state.selectedCharacter} optionTextDisplay={this.state.optionTextDisplay}  onPress={() => {this.displayDetailForScene()}}/>
+                </View>
+                <View style={{ flex: 3, backgroundColor: '#3472FF' }}></View>
             </View>
         )
     }
@@ -55,8 +60,14 @@ class Selectors extends React.Component {
         })
     }
 
-    displayDetailForScene(scene, character) {
-        this.props.onPress(scene, character)
+    onOptionChange(value) {
+        this.setState({
+            optionTextDisplay: value,
+        })
+    }
+
+    displayDetailForScene() {
+        this.props.onPress(this.state.selectedScene, this.state.selectedCharacter, this.state.optionTextDisplay)
     }
 }
 

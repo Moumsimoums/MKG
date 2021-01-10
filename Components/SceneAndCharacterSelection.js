@@ -9,14 +9,14 @@ class SceneAndCharacterSelection extends React.Component {
     return (
       <View style={styles.main_container}>
         <View style={styles.secondary_container}></View>
-          <Selectors onPress={(scene, character) => {this.displayDetailForScene(scene, character)}}/>
+          <Selectors onPress={(scene, character, optionTextDisplay) => {this.displayDetailForScene(scene, character, optionTextDisplay)}}/>
         <View style={styles.secondary_container}></View>
       </View>
     )
   }
 
-  displayDetailForScene(scene, character) {
-    this.props.navigation.navigate("SceneDetail", {scene: scene, character: character})
+  displayDetailForScene(scene, character, optionTextDisplay) {
+    this.props.navigation.navigate("SceneDetail", {scene: scene, character: character, optionTextDisplay: optionTextDisplay})
   }
 }
 
